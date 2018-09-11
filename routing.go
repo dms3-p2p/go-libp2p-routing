@@ -1,16 +1,16 @@
-// package routing defines the interface for a routing system used by ipfs.
+// package routing defines the interface for a routing system used by dms3-fs.
 package routing
 
 import (
 	"context"
 	"errors"
 
-	ropts "github.com/libp2p/go-libp2p-routing/options"
+	ropts "github.com/dms3-p2p/go-p2p-routing/options"
 
-	cid "github.com/ipfs/go-cid"
-	ci "github.com/libp2p/go-libp2p-crypto"
-	peer "github.com/libp2p/go-libp2p-peer"
-	pstore "github.com/libp2p/go-libp2p-peerstore"
+	cid "github.com/dms3-fs/go-cid"
+	ci "github.com/dms3-p2p/go-p2p-crypto"
+	peer "github.com/dms3-p2p/go-p2p-peer"
+	pstore "github.com/dms3-p2p/go-p2p-peerstore"
 )
 
 // ErrNotFound is returned when a search fails to find anything
@@ -61,10 +61,10 @@ type ValueStore interface {
 	//SearchValue(context.Context, string, ...ropts.Option) (<-chan []byte, error)
 }
 
-// IpfsRouting is the combination of different routing types that ipfs
+// Dms3FsRouting is the combination of different routing types that dms3-fs
 // uses. It can be satisfied by a single item (such as a DHT) or multiple
 // different pieces that are more optimized to each task.
-type IpfsRouting interface {
+type Dms3FsRouting interface {
 	ContentRouting
 	PeerRouting
 	ValueStore

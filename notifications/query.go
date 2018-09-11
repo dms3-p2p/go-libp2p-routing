@@ -4,8 +4,8 @@ import (
 	"context"
 	"encoding/json"
 
-	peer "github.com/libp2p/go-libp2p-peer"
-	pstore "github.com/libp2p/go-libp2p-peerstore"
+	peer "github.com/dms3-p2p/go-p2p-peer"
+	pstore "github.com/dms3-p2p/go-p2p-peerstore"
 )
 
 const RoutingQueryKey = "RoutingQueryEvent"
